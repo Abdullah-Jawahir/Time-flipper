@@ -1,0 +1,81 @@
+// Storage class
+
+class Store {
+
+    static getSeconds () {
+
+        let pastSeconds;
+
+        if (localStorage.getItem('pastSeconds') == 0) {
+            pastSeconds = int();
+        }else{
+
+            pastSeconds = localStorage.getItem('pastSeconds');
+        }
+
+        return pastSeconds;
+    }
+
+    static addSeconds (liveTime) {
+
+        let pastSeconds = Store.getSeconds();
+        pastSeconds = liveTime;
+
+        localStorage.setItem('pastSeconds', pastSeconds);
+    }
+
+    // static resetSeconds (liveTime) {
+
+    //     let pastSeconds = Store.getSeconds();
+    //     liveTime = 0;
+    //     pastSeconds = liveTime;
+    //     localStorage.setItem('pastSeconds', pastSeconds);
+
+    // }
+
+
+    static getMinutes () {
+
+        let pastMinutes;
+
+        if (localStorage.getItem('pastMinutes') == 0) {
+            pastMinutes = int();
+        }else{
+
+            pastMinutes = localStorage.getItem('pastMinutes');
+        }
+
+        return pastMinutes;
+    }
+
+    static addMinutes (liveTime) {
+
+        let pastMinutes = Store.getMinutes();
+        pastMinutes = liveTime;
+
+        localStorage.setItem('pastMinutes', pastMinutes);
+    }
+
+
+    static getHours () {
+
+        let pastHours;
+
+        if (localStorage.getItem('pastHours') == 0) {
+            pastHours = int();
+        }else{
+
+            pastHours = localStorage.getItem('pastHours');
+        }
+
+        return pastHours;
+    }
+
+    static addHours (liveTime) {
+
+        let pastHours = Store.getHours();
+        pastHours.push(liveTime);
+
+        localStorage.setItem('pastHours', pastHours);
+    }
+}

@@ -1,0 +1,136 @@
+* {
+    margin: 0;
+    padding: 0
+}
+
+@font-face {
+    font-family: 'Orbitron';
+    font-style: normal;
+    font-weight: 500;
+    font-display: swap;
+    src: url(../Fonts/Orbitron/Orbitron-VariableFont_wght.ttf);
+    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD
+}
+
+body {
+    width: auto;
+    height: 100vh;
+    background-image: url(../IMAGES/022.jpg);
+    background-size: auto;
+    background-repeat: no-repeat;
+    object-fit: contain;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Orbitron', sans-serif
+}
+
+.container {
+    border: 10px solid #FFF5EF;
+    max-width: 90%;
+    width: 60%;
+    height: 50%;
+    background: transparent;
+    transform-style: preserve-3d;
+    backdrop-filter: blur(10px);
+    border-radius: 15px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding-left: 30px
+}
+
+.container .time-ticker-box {
+    width: 10%;
+    margin-left: auto;
+    margin-right: 30px;
+    height: 25%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around
+}
+
+.container .time-ticker-box .time-ticker {
+    display: flex;
+    flex-direction: column;
+    justify-content: center
+}
+
+.container .time-ticker-box .time-ticker .fa-square {
+    margin-bottom: 5px
+}
+
+.main-changer-seconds#seconds-front-face {
+    transform: rotateX(-180deg)
+}
+
+.main-changer-seconds#seconds-back-face {
+    transform: rotateX(-360deg)
+}
+
+.main-changer-minutes#minutes-front-face {
+    transform: rotateX(-180deg)
+}
+
+.main-changer-minutes#minutes-back-face {
+    transform: rotateX(-360deg)
+}
+
+.main-changer-hours#hours-front-face {
+    transform: rotateX(-180deg)
+}
+
+.main-changer-hours#hours-back-face {
+    transform: rotateX(-360deg)
+}
+
+.fixed-bg-card {
+    position: relative;
+    width: 20%;
+    height: 25%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    background: linear-gradient(to bottom, #81dafd, #16c3e2);
+    margin-right: 30px;
+    transform-style: preserve-3d;
+    backface-visibility: hidden;
+    perspective: 250px
+}
+
+.fixed-bg-card .face {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 95%;
+    height: 95%;
+    text-align: center;
+    box-sizing: border-box;
+    transform-style: preserve-3d;
+    backdrop-filter: blur(10px);
+    box-sizing: border-box;
+    transition: transform 1s;
+    border-radius: 5px;
+    border-top: 1px solid black;
+    border-bottom: 3px solid black;
+    font-size: xx-large
+}
+
+.fixed-bg-card .face.back {
+    transform: rotateX(-180deg)
+}
+
+.fixed-bg-card .front,
+.fixed-bg-card .back {
+    border-bottom: 3px solid black;
+    border-radius: none
+}
+
+.fixed-bg-card .text-spans {
+    text-align: center;
+    overflow: hidden
+}
